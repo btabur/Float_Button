@@ -1,0 +1,42 @@
+package com.example.floatbutton;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+
+import info.hoang8f.widget.FButton;
+
+public class MainActivity extends AppCompatActivity {
+
+    FButton fButton;
+
+    EditText edit_shadow,edit_corner;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        fButton=findViewById(R.id.f_twitter_button);
+       edit_corner=findViewById(R.id.editcornerRadius);
+       edit_shadow=findViewById(R.id.edit_shadow);
+
+
+    }
+
+    public void btn_tamam(View view) {
+
+
+        if(!edit_shadow.getText().toString().isEmpty()){
+            fButton.setShadowHeight(Integer.parseInt(edit_shadow.getText().toString()));
+        }
+
+        if( !edit_corner.getText().toString().isEmpty()){
+            fButton.setCornerRadius(Integer.parseInt(edit_corner.getText().toString()));
+
+
+
+        }
+    }
+}
